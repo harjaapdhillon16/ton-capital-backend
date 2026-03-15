@@ -1,0 +1,19 @@
+name: backend-deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-staged:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Build and push container, then deploy to staged environment"
+
+  deploy-mainnet:
+    needs: deploy-staged
+    runs-on: ubuntu-latest
+    environment: mainnet
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Manual approval gate passed; deploy to mainnet"

@@ -1,0 +1,10 @@
+**/node_modules
+**/.next
+**/dist
+**/.env
+**/.DS_Store
+**/*.log
+**/.terraform
+**/terraform.tfstate
+**/terraform.tfstate.*
+wallet_keys.txt
